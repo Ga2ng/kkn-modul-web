@@ -1,8 +1,48 @@
+"use client"; 
 import Image from "next/image";
 import { FaRocket, FaCode, FaPalette, FaServer } from "react-icons/fa";
 import Navbar from "./component/Navbar";
+import { useEffect } from "react";
 
 export default function Home() {
+
+  useEffect(() => {
+    // Load YouTube IFrame API
+    const tag = document.createElement("script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.body.appendChild(tag);
+
+    let player: any;
+
+    // Dipanggil otomatis oleh YouTube API
+    (window as any).onYouTubeIframeAPIReady = () => {
+      player = new (window as any).YT.Player("youtube-video", {
+        events: {
+          // Optional: ready handler
+        },
+      });
+    };
+
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting && player?.pauseVideo) {
+            player.pauseVideo();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    const iframe = document.getElementById("youtube-video");
+    if (iframe) observer.observe(iframe);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Navigation */}
@@ -32,7 +72,7 @@ export default function Home() {
         </div>
 
         <div className="mt-16 relative h-96 rounded-xl overflow-hidden shadow-2xl">
-          <iframe
+          {/* <iframe
             width="100%"
             height="100%"
             src="https://www.youtube.com/embed/yFcDHCOAue0?si=gqc8TTfyzmXMt99Z&amp;start=1370&autoplay=1&mute=1"
@@ -41,7 +81,18 @@ export default function Home() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
-          ></iframe>
+            loading="lazy"
+          ></iframe> */}
+          <iframe
+            id="youtube-video"
+            src="https://www.youtube.com/embed/yFcDHCOAue0?start=1370&autoplay=1&mute=1&enablejsapi=1"
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+            loading="lazy"
+          />
         </div>
       </section>
 
