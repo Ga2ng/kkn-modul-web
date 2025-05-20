@@ -44,39 +44,6 @@ export default function MateriLayout({
     },
     {
       id: 2,
-      slug: "pengantar-web",
-      title: "Pengantar Web",
-      icon: <FiBook className="text-indigo-500" />,
-      subItems: [
-        { title: "Konsep Dasar", slug: "konsep-dasar" },
-        { title: "Arsitektur Web", slug: "arsitektur-web" },
-        { title: "Tools Development", slug: "tools-dev" },
-      ],
-    },
-    {
-      id: 3,
-      slug: "pengantar-web",
-      title: "Pengantar Web",
-      icon: <FiBook className="text-indigo-500" />,
-      subItems: [
-        { title: "Konsep Dasar", slug: "konsep-dasar" },
-        { title: "Arsitektur Web", slug: "arsitektur-web" },
-        { title: "Tools Development", slug: "tools-dev" },
-      ],
-    },
-    {
-      id: 4,
-      slug: "pengantar-web",
-      title: "Pengantar Web",
-      icon: <FiBook className="text-indigo-500" />,
-      subItems: [
-        { title: "Konsep Dasar", slug: "konsep-dasar" },
-        { title: "Arsitektur Web", slug: "arsitektur-web" },
-        { title: "Tools Development", slug: "tools-dev" },
-      ],
-    },
-    {
-      id: 5,
       slug: "html-css",
       title: "HTML & CSS",
       icon: <FiCode className="text-emerald-500" />,
