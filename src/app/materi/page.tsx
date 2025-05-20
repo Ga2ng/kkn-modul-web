@@ -5,7 +5,7 @@ export default function MateriIndex() {
     {
       id: 1,
       slug: "pengantar-web",
-      judul: "Pengantar Web Development",
+      judul: "HTML & CSS: Dasar dan Penerapannya",
       deskripsi: "Memahami dasar-dasar pembuatan website modern dengan pendekatan praktis",
       durasi: "2 Jam Pelajaran",
       level: "Pemula"

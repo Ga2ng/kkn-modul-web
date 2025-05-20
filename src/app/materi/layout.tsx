@@ -219,7 +219,7 @@ export default function MateriLayout({
         </div>
         {/* Scrollable Content Area */}
         <div className="flex-1 overflow-y-auto">
-          <div className="max-w-4xl mx-auto p-8">{children}</div>
+          <div className="max-w-full mx-auto">{children}</div>
         </div>
 
         {/* Jika butuh footer fixed di main content */}
