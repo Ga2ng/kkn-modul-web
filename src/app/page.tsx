@@ -1,11 +1,11 @@
-"use client"; 
+"use client";
 import Image from "next/image";
 import { FaRocket, FaCode, FaPalette, FaServer } from "react-icons/fa";
 import Navbar from "./component/Navbar";
 import { useEffect } from "react";
+import Link from "next/link";
 
 export default function Home() {
-
   useEffect(() => {
     // Load YouTube IFrame API
     const tag = document.createElement("script");
@@ -22,7 +22,6 @@ export default function Home() {
         },
       });
     };
-
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -44,14 +43,15 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white overflow-y-auto h-full">
       {/* Navigation */}
       <Navbar />
 
       {/* Hero Section */}
       <section className="container mx-auto px-6 py-20 text-center">
         <h1 className="text-4xl sm:text-5xl font-bold text-center mb-6">
-          Modul Online KKN SI 2025 <br />
+          Modul Online KKN Sistem Informasi ITATS
+          <br />
           <span className="text-blue-600">
             Belajar, Berkontribusi, Berdampak
           </span>
@@ -63,9 +63,11 @@ export default function Home() {
           tanpa batas.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition shadow-lg text-lg font-medium">
-            Mulai Belajar Sekarang
-          </button>
+          <Link href="/materi">
+            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition shadow-lg text-lg font-medium">
+              Mulai Belajar Sekarang
+            </button>
+          </Link>
           <button className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition text-lg font-medium">
             Lihat Daftar Modul
           </button>
