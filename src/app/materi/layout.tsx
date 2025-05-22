@@ -22,8 +22,8 @@ export default function MateriLayout({
 }) {
   const pathname = usePathname(); // Dapatkan path saat ini
   const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>({
-    "pengantar-web": true,
-    "html-css": false,
+    "pengantar-web": false,
+    "bootstrap": false,
   });
 
   const isActive = (itemSlug: string, subItemSlug?: string) => {
@@ -58,8 +58,8 @@ export default function MateriLayout({
     {
       id: 1,
       slug: "pengantar-web",
-      title: "Pengenalan HTML dan CSS",
-      icon: <FiBook className="text-indigo-500" />,
+      title: "Apa ituHTML dan CSS",
+      icon: <FiCode className="text-emerald-500" />,
       subItems: [
         { title: "Tujuan Pembelajaran", slug: "tujuan-pembelajaran" },
         { title: "Apa itu HTML ?", slug: "apa-itu-html" },
@@ -67,17 +67,24 @@ export default function MateriLayout({
         { title: "Contoh Tag Umum HTML", slug: "contoh-tag-umum-html" },
         { title: "Class dan ID dalam HTML", slug: "class-id-html" },
         { title: "Pengenalan CSS", slug: "pengenalan-css" },
+        { title: "Contoh CSS Sederhana", slug: "contoh-css-sederhana" },
+        { title: "Kenapa HTML dan CSS Penting?", slug: "kenapa-html-dan-css-penting" },
+        { title: "Kesimpulan", slug: "kesimpulan" },
       ],
     },
     {
       id: 2,
-      slug: "html-css",
-      title: "HTML & CSS",
-      icon: <FiCode className="text-emerald-500" />,
+      slug: "bootstrap",
+      title: "Apa itu Framework ?",
+      icon: <FiBook className="text-indigo-500" />,
       subItems: [
-        { title: "Struktur HTML", slug: "struktur-html" },
-        { title: "CSS Fundamentals", slug: "css-fundamental" },
-        { title: "Layout Modern", slug: "layout-modern" },
+        { title: "Apa itu Framework ?", slug: "apa-itu-framework" },
+        { title: "Kenapa Framework Dibutuhkan ?", slug: "kenapa-framework-diperlukan" },
+        { title: "Macam-Macam Framework", slug: "macam-macam-framework" },
+        { title: "Apa itu Bootstrap ?", slug: "apa-itu-bootstrap" },
+        { title: "Struktur Dasar Bootstrap", slug: "struktur-dasar-bootstrap" },
+        { title: "Komponen Bootstrap Populer", slug: "komponen-bootstrap-populer" },
+        { title: "Penggunaan Komponen Bootstrap", slug: "penggunaan-komponen-bootstrap" },
       ],
     },
   ];
@@ -93,7 +100,9 @@ export default function MateriLayout({
               <FiBookmark className="text-indigo-600 text-xl" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">Modul KKN SI 2025</h1>
+              <h1 className="text-xl font-bold text-gray-900">
+                Modul KKN SI 2025
+              </h1>
               <p className="text-sm text-gray-500">Web Development</p>
             </div>
           </div>
@@ -116,8 +125,11 @@ export default function MateriLayout({
               </h3>
 
               <ul className="space-y-1">
-              {materiItems.map((item) => (
-                  <li key={item.id} className="border-l border-gray-200 ml-4 pl-2">
+                {materiItems.map((item) => (
+                  <li
+                    key={item.id}
+                    className="border-l border-gray-200 ml-4 pl-2"
+                  >
                     <div
                       onClick={() => toggleExpand(item.slug)}
                       className={`flex items-center justify-between px-3 py-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors ${
@@ -126,9 +138,11 @@ export default function MateriLayout({
                     >
                       <div className="flex items-center gap-3">
                         {item.icon}
-                        <span className={`font-medium ${
-                          isActive(item.slug) ? "text-indigo-600" : ""
-                        }`}>
+                        <span
+                          className={`font-medium ${
+                            isActive(item.slug) ? "text-indigo-600" : ""
+                          }`}
+                        >
                           Bab {item.id}: {item.title}
                         </span>
                       </div>
@@ -144,7 +158,7 @@ export default function MateriLayout({
                         {item.subItems.map((subItem, index) => (
                           <li key={index}>
                             <Link
-                              href={`#${subItem.slug}`}
+                              href={`/materi/${item.slug}#${subItem.slug}`}
                               className={`flex items-center gap-3 px-3 py-2 text-sm rounded-lg hover:bg-gray-100 transition-colors ${
                                 isActive(item.slug, subItem.slug)
                                   ? "text-indigo-600 bg-indigo-50"
@@ -175,7 +189,9 @@ export default function MateriLayout({
         <div className="p-4 border-t border-gray-200 shrink-0">
           <div className="p-3 bg-gray-50 rounded-lg">
             <div className="flex items-center justify-between mb-1">
-              <span className="text-sm font-medium text-gray-700">Progress</span>
+              <span className="text-sm font-medium text-gray-700">
+                Progress
+              </span>
               <span className="text-sm text-gray-500">25%</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-1.5">
@@ -200,13 +216,19 @@ export default function MateriLayout({
             />
           </div>
           <nav className="hidden md:flex space-x-6">
-            <Link href="/" className="text-gray-600 hover:text-blue-600 transition">
+            <Link
+              href="/"
+              className="text-gray-600 hover:text-blue-600 transition"
+            >
               Beranda
             </Link>
             <Link href="/materi" className="text-blue-600 font-medium">
               Materi
             </Link>
-            <Link href="/tentang" className="text-gray-600 hover:text-blue-600 transition">
+            <Link
+              href="/tentang"
+              className="text-gray-600 hover:text-blue-600 transition"
+            >
               Tentang
             </Link>
           </nav>

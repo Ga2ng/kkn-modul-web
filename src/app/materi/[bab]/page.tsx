@@ -1,5 +1,12 @@
 "use client";
 import KontenIframe from "@/app/component/KontenIframe";
+import BootstrapBasicStructure from "@/app/component/materi2/BootstrapBasicStructure";
+import BootstrapComponents from "@/app/component/materi2/BootstrapComponents";
+import BootstrapComponentExamples from "@/app/component/materi2/BootstrapComponentsExample";
+import FrameworkIntroduction from "@/app/component/materi2/FrameworkIntroduction";
+import FrameworkTypes from "@/app/component/materi2/FrameworkTypes";
+import WhatBootstrap from "@/app/component/materi2/WhatBootstrap";
+import WhyFrameworksNeeded from "@/app/component/materi2/WhyFrameworksNeeded";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { useEffect, useRef } from "react";
@@ -922,6 +929,7 @@ const kontenBab: Record<string, any> = {
       },
       {
         judul: "Contoh CSS Sederhana",
+        slug: "contoh-css-sederhana",
         konten: (
           <div className="container mx-auto px-4 py-8">
             <article className="prose max-w-4xl mx-auto">
@@ -1071,6 +1079,7 @@ const kontenBab: Record<string, any> = {
       },
       {
         judul: "Kenapa HTML dan CSS Penting?",
+        slug: "kenapa-html-dan-css-penting",
         konten: (
           <div className="container mx-auto px-4 py-8">
             <article className="prose max-w-4xl mx-auto">
@@ -1295,6 +1304,7 @@ const kontenBab: Record<string, any> = {
       },
       {
         judul: "Kesimpulan",
+        slug: "kesimpulan",
         konten: (
           <div className="container mx-auto px-4 py-8">
             <article className="prose max-w-4xl mx-auto">
@@ -1384,52 +1394,102 @@ const kontenBab: Record<string, any> = {
         )
       }
     ],
-    nextSlug: "html-css",
+    nextSlug: "bootstrap",
   },
-  "html-css": {
-    judul: "HTML & CSS Fundamental",
+  "bootstrap": {
+    judul: "Apa itu Framework",
     subBab: [
       {
-        judul: "Struktur Dokumen HTML",
+        judul: "Pengenalan Framework ?",
+        slug: "apa-itu-framework",
         konten: (
-          <div className="prose max-w-4xl">
-            <pre>{`<!DOCTYPE html>
-<html>
-  <head>
-    <title>Contoh</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-  </body>
-</html>`}</pre>
-          </div>
+          <FrameworkIntroduction />
         ),
       },
       {
-        judul: "Dasar-Dasar CSS",
+        judul: "Kenapa Framework Diperlukan dalam pembuatan web ?",
+        slug: "kenapa-framework-diperlukan",
         konten: (
-          <div className="prose max-w-4xl">
-            <p>Contoh CSS dasar:</p>
-            <pre>{`body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-}`}</pre>
-          </div>
+          <WhyFrameworksNeeded />
         ),
       },
       {
-        judul: "Layout dengan Flexbox",
+        judul: "Macam-Macam Framework",
+        slug: "macam-macam-framework",
         konten: (
-          <div className="prose max-w-4xl">
-            <p>Flexbox memudahkan pembuatan layout yang responsif:</p>
-            <pre>{`.container {
-  display: flex;
-  justify-content: space-between;
-}`}</pre>
-          </div>
+          <FrameworkTypes />
         ),
       },
+      {
+        judul: "Apa itu Bootstrap ?",
+        slug: "apa-itu-bootstrap",
+        konten: (
+          <WhatBootstrap />
+        ),
+      },
+      {
+        judul: "Struktur Dasar Bootstrap",
+        slug: "struktur-dasar-bootstrap",
+        konten: (
+          <BootstrapBasicStructure />
+        ),
+      },
+      {
+        judul: "Komponen Bootstrap Populer",
+        slug: "komponen-bootstrap-populer",
+        konten: (
+          <BootstrapComponents />
+        ),
+      },
+      {
+        judul: "Penggunaan Komponen Bootstrap",
+        slug: "penggunaan-komponen-bootstrap",
+        konten: (
+          <BootstrapComponentExamples />
+        ),
+      }
+
+//       {
+//         judul: "Struktur Dokumen HTML",
+//         konten: (
+//           <div className="prose max-w-4xl">
+//             <pre>{`<!DOCTYPE html>
+// <html>
+//   <head>
+//     <title>Contoh</title>
+//   </head>
+//   <body>
+//     <h1>Hello World!</h1>
+//   </body>
+// </html>`}</pre>
+//           </div>
+//         ),
+//       },
+//       {
+//         judul: "Dasar-Dasar CSS",
+//         konten: (
+//           <div className="prose max-w-4xl">
+//             <p>Contoh CSS dasar:</p>
+//             <pre>{`body {
+//   font-family: Arial, sans-serif;
+//   line-height: 1.6;
+//   color: #333;
+// }`}</pre>
+//           </div>
+//         ),
+//       },
+//       {
+//         judul: "Layout dengan Flexbox",
+//         konten: (
+//           <div className="prose max-w-4xl">
+//             <p>Flexbox memudahkan pembuatan layout yang responsif:</p>
+//             <pre>{`.container {
+//   display: flex;
+//   justify-content: space-between;
+// }`}</pre>
+//           </div>
+//         ),
+//       },
     ],
     prevSlug: "pengantar-web",
   },
