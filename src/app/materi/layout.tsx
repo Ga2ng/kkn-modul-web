@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   FiHome,
   FiBook,
@@ -23,6 +23,9 @@ export default function MateriLayout({
     "html-css": false,
   });
 
+  // const [activeSubBab, setActiveSubBab] = useState<string | null>(null);
+  // const contentRef = useRef<HTMLDivElement>(null);
+
   const toggleExpand = (slug: string) => {
     setExpandedItems((prev) => ({
       ...prev,
@@ -37,7 +40,7 @@ export default function MateriLayout({
       title: "Pengantar Web",
       icon: <FiBook className="text-indigo-500" />,
       subItems: [
-        { title: "Konsep Dasar", slug: "konsep-dasar" },
+        { title: "Tujuan Pembelajaran", slug: "tujuan-pembelajaran" },
         { title: "Arsitektur Web", slug: "arsitektur-web" },
         { title: "Tools Development", slug: "tools-dev" },
       ],
