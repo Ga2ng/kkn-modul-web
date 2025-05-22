@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   FiHome,
   FiBook,
@@ -23,8 +23,19 @@ export default function MateriLayout({
     "html-css": false,
   });
 
-  // const [activeSubBab, setActiveSubBab] = useState<string | null>(null);
-  // const contentRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") {
+        e.preventDefault();
+        alert("Penyimpanan dinonaktifkan. Gunakan tombol Fork untuk menyimpan versi Anda.");
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   const toggleExpand = (slug: string) => {
     setExpandedItems((prev) => ({
@@ -60,24 +71,22 @@ export default function MateriLayout({
 
   return (
     <div className="flex h-screen bg-gray-50 overflow-hidden">
-      {/* Sidebar - Scroll Independent */}
+      {/* Sidebar */}
       <div className="w-80 flex flex-col h-full border-r border-gray-200 bg-white">
-        {/* Header - Fixed Height */}
+        {/* Header */}
         <div className="p-6 border-b border-gray-200 shrink-0">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-indigo-100 rounded-lg">
               <FiBookmark className="text-indigo-600 text-xl" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">
-                Modul KKN SI 2025
-              </h1>
+              <h1 className="text-xl font-bold text-gray-900">Modul KKN SI 2025</h1>
               <p className="text-sm text-gray-500">Web Development</p>
             </div>
           </div>
         </div>
 
-        {/* Navigation - Scrollable Content */}
+        {/* Navigation */}
         <div className="flex-1 overflow-y-auto">
           <nav className="p-4">
             <Link
@@ -95,10 +104,7 @@ export default function MateriLayout({
 
               <ul className="space-y-1">
                 {materiItems.map((item) => (
-                  <li
-                    key={item.id}
-                    className="border-l border-gray-200 ml-4 pl-2"
-                  >
+                  <li key={item.id} className="border-l border-gray-200 ml-4 pl-2">
                     <div
                       onClick={() => toggleExpand(item.slug)}
                       className="flex items-center justify-between px-3 py-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors"
@@ -138,13 +144,11 @@ export default function MateriLayout({
           </nav>
         </div>
 
-        {/* Footer - Fixed Height */}
+        {/* Footer */}
         <div className="p-4 border-t border-gray-200 shrink-0">
           <div className="p-3 bg-gray-50 rounded-lg">
             <div className="flex items-center justify-between mb-1">
-              <span className="text-sm font-medium text-gray-700">
-                Progress
-              </span>
+              <span className="text-sm font-medium text-gray-700">Progress</span>
               <span className="text-sm text-gray-500">25%</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-1.5">
@@ -157,9 +161,8 @@ export default function MateriLayout({
         </div>
       </div>
 
-      {/* Main Content - Scroll Independent */}
+      {/* Main Content */}
       <div className="flex-1 flex flex-col h-full overflow-hidden">
-        {/* Jika butuh header fixed di main content */}
         <div className="flex items-center justify-between p-4 border-b bg-white">
           <div className="shrink-0">
             <Image
@@ -170,30 +173,21 @@ export default function MateriLayout({
             />
           </div>
           <nav className="hidden md:flex space-x-6">
-            <Link
-              href="/"
-              className="text-gray-600 hover:text-blue-600 transition"
-            >
+            <Link href="/" className="text-gray-600 hover:text-blue-600 transition">
               Beranda
             </Link>
             <Link href="/materi" className="text-blue-600 font-medium">
               Materi
             </Link>
-            <Link
-              href="/tentang"
-              className="text-gray-600 hover:text-blue-600 transition"
-            >
+            <Link href="/tentang" className="text-gray-600 hover:text-blue-600 transition">
               Tentang
             </Link>
           </nav>
         </div>
-        {/* Scrollable Content Area */}
+
         <div className="flex-1 overflow-y-auto">
           <div className="max-w-full mx-auto">{children}</div>
         </div>
-
-        {/* Jika butuh footer fixed di main content */}
-        {/* <div className="shrink-0 p-4 border-t bg-white">Footer</div> */}
       </div>
     </div>
   );

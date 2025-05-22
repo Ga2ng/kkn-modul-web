@@ -316,7 +316,7 @@ const kontenBab: Record<string, any> = {
                   {" "}
                   {/* Container dengan tinggi yang ditentukan */}
                   <iframe
-                    src="https://stackblitz.com/edit/stackblitz-starters-name2vmc?embed=1&file=index.html&hideNavigation=1&terminalHeight=0"
+                    src="https://stackblitz.com/edit/stackblitz-starters-pfrqyep4?embed=1&file=index.html&hideExplorer=1&hideNavigation=1"
                     className="w-full h-[500px] border-0 rounded-lg shadow-md"
                     sandbox="allow-forms allow-modals allow-popups allow-same-origin allow-scripts"
                     loading="lazy"
