@@ -1,7 +1,8 @@
-// "use client";
+"use client";
+import KontenIframe from "@/app/component/KontenIframe";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 // Data konten bab dengan struktur sub-bab yang lebih terorganisir
 const kontenBab: Record<string, any> = {
@@ -31,6 +32,7 @@ const kontenBab: Record<string, any> = {
       },
       {
         judul: "Apa itu HTML ?",
+        slug: "apa-itu-html",
         konten: (
           <div className="prose max-w-4xl mx-auto">
             <section className="mb-8">
@@ -92,13 +94,14 @@ const kontenBab: Record<string, any> = {
                   </h3>
                 </div>
                 <div className="h-[500px] w-full">
-                  <iframe
+                  {/* <iframe
                     src="https://stackblitz.com/edit/bootstrap-basic-template-edfnjmhx?file=index.html"
                     className="w-full h-full border-0"
-                    allow="accelerometer; camera; microphone; midi; geolocation; encrypted-media;"
                     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
                     title="HTML Live Demo"
-                  />
+                    loading="lazy"
+                  /> */}
+                  <KontenIframe title="HTML Live Demo" src="https://stackblitz.com/edit/bootstrap-basic-template-edfnjmhx?file=index.html" />
                 </div>
                 <div className="bg-gray-50 px-4 py-2 text-sm text-gray-600 border-t">
                   Gunakan editor di atas untuk bereksperimen dengan kode HTML
@@ -111,6 +114,7 @@ const kontenBab: Record<string, any> = {
       },
       {
         judul: "Peran HTML dan CSS dalam pembuatan website",
+        slug: "peran-html",
         konten: (
           <div className="prose max-w-4xl mx-auto">
             <section className="mb-10">
@@ -226,6 +230,7 @@ const kontenBab: Record<string, any> = {
       },
       {
         judul: "Contoh Tag Umum HTML",
+        slug: "contoh-tag-umum-html",
         konten: (
           <div className="container mx-auto px-4 py-8">
             <article className="prose max-w-4xl mx-auto">
@@ -313,15 +318,15 @@ const kontenBab: Record<string, any> = {
                   Contoh Struktur HTML
                 </h2>
                 <div className="w-full h-[500px]">
-                  {" "}
                   {/* Container dengan tinggi yang ditentukan */}
-                  <iframe
+                  {/* <iframe
                     src="https://stackblitz.com/edit/stackblitz-starters-pfrqyep4?embed=1&file=index.html&hideExplorer=1&hideNavigation=1"
                     className="w-full h-[500px] border-0 rounded-lg shadow-md"
                     sandbox="allow-forms allow-modals allow-popups allow-same-origin allow-scripts"
                     loading="lazy"
                     title="HTML Live Demo"
-                  ></iframe>
+                  ></iframe> */}
+                  <KontenIframe title="HTML Live Demo" src="https://stackblitz.com/edit/stackblitz-starters-pfrqyep4?embed=1&file=index.html&hideExplorer=1&hideNavigation=1"/>
                 </div>
               </section>
             </article>
@@ -330,6 +335,7 @@ const kontenBab: Record<string, any> = {
       },
       {
         judul: "Class dan ID dalam HTML",
+        slug: "class-id-html",
         konten: (
           <div className="container mx-auto px-4 py-8">
             <article className="prose max-w-4xl mx-auto">
@@ -488,6 +494,7 @@ const kontenBab: Record<string, any> = {
       },
       {
         judul: "Pengenalan CSS",
+        slug: "pengenalan-css",
         konten: (
           <div className="container mx-auto px-4 py-8">
             <article className="prose max-w-4xl mx-auto">
@@ -929,12 +936,14 @@ const kontenBab: Record<string, any> = {
                 </h2>
 
                 <div className="w-full h-[400px] bg-white rounded-lg shadow-md overflow-hidden mb-4">
-                  <iframe
+                  {/* <iframe
                     src="https://stackblitz.com/edit/stackblitz-starters-jg6mhsqk?embed=1&file=index.html&hideExplorer=1&hideNavigation=1"
                     className="w-full h-full border-0"
                     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
                     title="Contoh CSS Dasar"
-                  ></iframe>
+                    loading="lazy"
+                  ></iframe> */}
+                  <KontenIframe title="Contoh CSS Dasar" src="https://stackblitz.com/edit/stackblitz-starters-jg6mhsqk?embed=1&file=index.html&hideExplorer=1&hideNavigation=1"/>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-4">
@@ -1003,12 +1012,14 @@ const kontenBab: Record<string, any> = {
                 </h2>
 
                 <div className="w-full h-[400px] bg-white rounded-lg shadow-md overflow-hidden mb-4">
-                  <iframe
+                  {/* <iframe
                     src="https://stackblitz.com/edit/stackblitz-starters-un8sbm7u?embed=1&file=index.html&hideExplorer=1&hideNavigation=1"
                     className="w-full h-full border-0"
                     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
                     title="Contoh Box Model CSS"
-                  ></iframe>
+                    loading="lazy"
+                  ></iframe> */}
+                  <KontenIframe title="Contoh Box Model CSS" src="https://stackblitz.com/edit/stackblitz-starters-un8sbm7u?embed=1&file=index.html&hideExplorer=1&hideNavigation=1"/>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-4">
@@ -1457,7 +1468,8 @@ export default function BabPage({ params }: { params: { bab: string } }) {
           <section
             key={index}
             className="border-b pb-8 last:border-b-0"
-            id={`subbab-${index + 1}`}
+            // id={`subbab-${index + 1}`}
+            id={subBab?.slug ?? `subbab-${index + 1}`}
           >
             <div className="flex items-center mb-4">
               <span className="bg-blue-100 text-blue-800 font-semibold px-3 py-1 rounded-full text-sm mr-3">
@@ -1495,13 +1507,13 @@ export default function BabPage({ params }: { params: { bab: string } }) {
   );
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { bab: string };
-}) {
-  const bab = kontenBab[params.bab];
-  return {
-    title: `${bab?.judul || "Bab Tidak Ditemukan"} | Modul KKN SI 2025`,
-  };
-}
+// export async function generateMetadata({
+//   params,
+// }: {
+//   params: { bab: string };
+// }) {
+//   const bab = kontenBab[params.bab];
+//   return {
+//     title: `${bab?.judul || "Bab Tidak Ditemukan"} | Modul KKN SI 2025`,
+//   };
+// }

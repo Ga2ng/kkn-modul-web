@@ -12,22 +12,32 @@ import {
   FiBookmark,
   FiFileText,
 } from "react-icons/fi";
+import { BsCircleFill } from "react-icons/bs";
+import { usePathname } from "next/navigation";
 
 export default function MateriLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname(); // Dapatkan path saat ini
   const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>({
     "pengantar-web": true,
     "html-css": false,
   });
 
+  const isActive = (itemSlug: string, subItemSlug?: string) => {
+    if (subItemSlug) {
+      return pathname === `/materi/${itemSlug}/${subItemSlug}`;
+    }
+    return pathname.startsWith(`/materi/${itemSlug}`);
+  };
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") {
         e.preventDefault();
-        alert("Penyimpanan dinonaktifkan. Gunakan tombol Fork untuk menyimpan versi Anda.");
+        alert("Ctrl + S dinonaktifkan");
       }
     };
 
@@ -48,12 +58,15 @@ export default function MateriLayout({
     {
       id: 1,
       slug: "pengantar-web",
-      title: "Pengantar Web",
+      title: "Pengenalan HTML dan CSS",
       icon: <FiBook className="text-indigo-500" />,
       subItems: [
         { title: "Tujuan Pembelajaran", slug: "tujuan-pembelajaran" },
-        { title: "Arsitektur Web", slug: "arsitektur-web" },
-        { title: "Tools Development", slug: "tools-dev" },
+        { title: "Apa itu HTML ?", slug: "apa-itu-html" },
+        { title: "Peran HTML dan CSS", slug: "peran-html" },
+        { title: "Contoh Tag Umum HTML", slug: "contoh-tag-umum-html" },
+        { title: "Class dan ID dalam HTML", slug: "class-id-html" },
+        { title: "Pengenalan CSS", slug: "pengenalan-css" },
       ],
     },
     {
@@ -103,15 +116,19 @@ export default function MateriLayout({
               </h3>
 
               <ul className="space-y-1">
-                {materiItems.map((item) => (
+              {materiItems.map((item) => (
                   <li key={item.id} className="border-l border-gray-200 ml-4 pl-2">
                     <div
                       onClick={() => toggleExpand(item.slug)}
-                      className="flex items-center justify-between px-3 py-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors"
+                      className={`flex items-center justify-between px-3 py-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors ${
+                        isActive(item.slug) ? "bg-gray-100" : ""
+                      }`}
                     >
                       <div className="flex items-center gap-3">
                         {item.icon}
-                        <span className="font-medium">
+                        <span className={`font-medium ${
+                          isActive(item.slug) ? "text-indigo-600" : ""
+                        }`}>
                           Bab {item.id}: {item.title}
                         </span>
                       </div>
@@ -127,10 +144,20 @@ export default function MateriLayout({
                         {item.subItems.map((subItem, index) => (
                           <li key={index}>
                             <Link
-                              href={`/materi/${item.slug}/${subItem.slug}`}
-                              className="flex items-center gap-3 px-3 py-2 text-sm rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors"
+                              href={`#${subItem.slug}`}
+                              className={`flex items-center gap-3 px-3 py-2 text-sm rounded-lg hover:bg-gray-100 transition-colors ${
+                                isActive(item.slug, subItem.slug)
+                                  ? "text-indigo-600 bg-indigo-50"
+                                  : "text-gray-600 hover:text-gray-900"
+                              }`}
                             >
-                              <FiFileText className="text-gray-400" />
+                              <BsCircleFill
+                                className={`w-2.5 h-2.5 ${
+                                  isActive(item.slug, subItem.slug)
+                                    ? "text-indigo-500"
+                                    : "text-gray-400"
+                                }`}
+                              />
                               <span>{subItem.title}</span>
                             </Link>
                           </li>
