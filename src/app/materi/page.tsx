@@ -12,20 +12,20 @@ export default function MateriIndex() {
     },
     {
       id: 2,
-      slug: "html-css",
-      judul: "HTML & CSS Fundamental",
-      deskripsi: "Membangun struktur dan styling halaman web responsif",
-      durasi: "4 Jam Pelajaran",
+      slug: "bootstrap",
+      judul: "Pengenalan Framework Bootstrap",
+      deskripsi: "Menjelajahi Bootstrap, kerangka kerja CSS paling populer di dunia, untuk merancang situs web responsif dan mobile-first dengan cepat dan efisien.",
+      durasi: "2 Jam Pelajaran",
       level: "Dasar"
     },
-    {
-      id: 3,
-      slug: "javascript",
-      judul: "JavaScript Modern",
-      deskripsi: "Menguasai konsep pemrograman frontend dengan ES6+",
-      durasi: "6 Jam Pelajaran",
-      level: "Menengah"
-    },
+    // {
+    //   id: 3,
+    //   slug: "javascript",
+    //   judul: "JavaScript Modern",
+    //   deskripsi: "Menguasai konsep pemrograman frontend dengan ES6+",
+    //   durasi: "6 Jam Pelajaran",
+    //   level: "Menengah"
+    // },
   ];
 
   return (
