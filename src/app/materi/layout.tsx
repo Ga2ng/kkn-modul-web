@@ -58,7 +58,7 @@ export default function MateriLayout({
     {
       id: 1,
       slug: "pengantar-web",
-      title: "Apa ituHTML dan CSS",
+      title: "Pengenalan HTML dan CSS",
       icon: <FiCode className="text-emerald-500" />,
       subItems: [
         { title: "Tujuan Pembelajaran", slug: "tujuan-pembelajaran" },
