@@ -75,7 +75,7 @@ export default function MateriLayout({
     {
       id: 2,
       slug: "bootstrap",
-      title: "Apa itu Framework ?",
+      title: "Pengenalan Framework Bootstrap",
       icon: <FiBook className="text-indigo-500" />,
       subItems: [
         { title: "Apa itu Framework ?", slug: "apa-itu-framework" },
