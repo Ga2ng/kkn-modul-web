@@ -118,7 +118,13 @@ export default function MateriLayout({
               <FiHome className="text-gray-500 group-hover:text-indigo-500" />
               <span className="font-medium">Beranda Materi</span>
             </Link>
-
+            <Link
+              href="materi/materi-ppt"
+              className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors group mb-2"
+            >
+              <FiBook className="text-gray-500 group-hover:text-indigo-500" />
+              <span className="font-medium">Materi PPT</span>
+            </Link>
             <div className="mt-6">
               <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-3 mb-3">
                 Daftar Materi
