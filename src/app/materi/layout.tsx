@@ -85,6 +85,10 @@ export default function MateriLayout({
         { title: "Struktur Dasar Bootstrap", slug: "struktur-dasar-bootstrap" },
         { title: "Komponen Bootstrap Populer", slug: "komponen-bootstrap-populer" },
         { title: "Penggunaan Komponen Bootstrap", slug: "penggunaan-komponen-bootstrap" },
+        { title: "Grid System Bootstrap", slug: "grid-system-bootstrap" },
+        { title: "Contoh Layout Responsive", slug: "contoh-layout-responsive" },
+        { title: "Kesimpulan Materi Bootstrap", slug: "kesimpulan-materi-bootstrap" },
+
       ],
     },
   ];

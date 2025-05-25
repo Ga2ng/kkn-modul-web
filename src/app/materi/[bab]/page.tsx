@@ -3,8 +3,11 @@ import KontenIframe from "@/app/component/KontenIframe";
 import BootstrapBasicStructure from "@/app/component/materi2/BootstrapBasicStructure";
 import BootstrapComponents from "@/app/component/materi2/BootstrapComponents";
 import BootstrapComponentExamples from "@/app/component/materi2/BootstrapComponentsExample";
+import BootstrapConclusion from "@/app/component/materi2/BootstrapConclusion";
+import BootstrapGridSystem from "@/app/component/materi2/BootstrapGridSystem";
 import FrameworkIntroduction from "@/app/component/materi2/FrameworkIntroduction";
 import FrameworkTypes from "@/app/component/materi2/FrameworkTypes";
+import ResponsiveGridExample from "@/app/component/materi2/ResponsiveGridExample";
 import WhatBootstrap from "@/app/component/materi2/WhatBootstrap";
 import WhyFrameworksNeeded from "@/app/component/materi2/WhyFrameworksNeeded";
 import Link from "next/link";
@@ -1447,51 +1450,31 @@ const kontenBab: Record<string, any> = {
         konten: (
           <BootstrapComponentExamples />
         ),
+      },
+      {
+        judul: "Grid System Bootstrap",
+        slug: "grid-system-bootstrap",
+        konten: (
+          <BootstrapGridSystem />
+        ),
+      },
+      {
+        judul: "Contoh Layout Responsive",
+        slug: "contoh-layout-responsive",
+        konten: (
+          <ResponsiveGridExample />
+        ),
+      },
+      {
+        judul: "Kesimpulan Materi Bootstrap",
+        slug: "kesimpulan-materi-bootstrap",
+        konten: (
+          <BootstrapConclusion />
+        ),
       }
-
-//       {
-//         judul: "Struktur Dokumen HTML",
-//         konten: (
-//           <div className="prose max-w-4xl">
-//             <pre>{`<!DOCTYPE html>
-// <html>
-//   <head>
-//     <title>Contoh</title>
-//   </head>
-//   <body>
-//     <h1>Hello World!</h1>
-//   </body>
-// </html>`}</pre>
-//           </div>
-//         ),
-//       },
-//       {
-//         judul: "Dasar-Dasar CSS",
-//         konten: (
-//           <div className="prose max-w-4xl">
-//             <p>Contoh CSS dasar:</p>
-//             <pre>{`body {
-//   font-family: Arial, sans-serif;
-//   line-height: 1.6;
-//   color: #333;
-// }`}</pre>
-//           </div>
-//         ),
-//       },
-//       {
-//         judul: "Layout dengan Flexbox",
-//         konten: (
-//           <div className="prose max-w-4xl">
-//             <p>Flexbox memudahkan pembuatan layout yang responsif:</p>
-//             <pre>{`.container {
-//   display: flex;
-//   justify-content: space-between;
-// }`}</pre>
-//           </div>
-//         ),
-//       },
     ],
     prevSlug: "pengantar-web",
+    nextSlug: "belajar-prompt",
   },
 };
 
