@@ -10,6 +10,14 @@ import FrameworkTypes from "@/app/component/materi2/FrameworkTypes";
 import ResponsiveGridExample from "@/app/component/materi2/ResponsiveGridExample";
 import WhatBootstrap from "@/app/component/materi2/WhatBootstrap";
 import WhyFrameworksNeeded from "@/app/component/materi2/WhyFrameworksNeeded";
+import AICodingDemo from "@/app/component/materi3/AICodingDemo";
+import AIDailyExamples from "@/app/component/materi3/AIDailyExamples";
+import AIInIT from "@/app/component/materi3/AIInIT";
+import AIIntroduction from "@/app/component/materi3/AIIntroduction";
+import AIThreatOrOpportunity from "@/app/component/materi3/AIThreatOrOpportunity";
+import AIWebDev from "@/app/component/materi3/AIWebDev";
+import AIWebDevConclusion from "@/app/component/materi3/AIWebDevConclusion";
+import FundamentalSection from "@/app/component/materi3/FundamentalSection";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { useEffect, useRef } from "react";
@@ -1474,8 +1482,69 @@ const kontenBab: Record<string, any> = {
       }
     ],
     prevSlug: "pengantar-web",
-    nextSlug: "belajar-prompt",
+    nextSlug: "belajar-menggunakan-ai",
   },
+  "belajar-menggunakan-ai": {
+    judul: "Belajar Menggunakan AI",
+    subBab: [
+      {
+        judul: "Apa Itu AI (Artificial Intelligence)?",
+        slug: "apa-itu-ai",
+        konten: (
+          <AIIntroduction />
+        ),
+      },
+      {
+        judul: "Contoh Penggunaan AI",
+        slug: "contoh-penggunaan-ai",
+        konten: (
+          <AIDailyExamples />
+        ),
+      },
+      {
+        judul: "AI Dalam Dunia IT",
+        slug: "ai-dalam-dunia-it",
+        konten: (
+          <AIInIT />
+        ),
+      },
+      {
+        judul: "AI Dalam Dunia Web Development",
+        slug: "ai-dalam-dunia-web-development",
+        konten: (
+          <AIWebDev />
+        ),
+      },
+      {
+        judul: "Contoh AI Membantu Coding",
+        slug: "contoh-ai-membantu-coding",
+        konten: (
+          <AICodingDemo />
+        ),
+      },
+      {
+        judul: "AI = Ancaman atau Peluang?",
+        slug: "ai-ancaman-atau-peluang",
+        konten: (
+          <AIThreatOrOpportunity />
+        ),
+      },
+      {
+        judul: "Dasar-Dasar Masih Tetap Penting",
+        slug: "dasar-dasar-masih-tetap-penting",
+        konten: (
+          <FundamentalSection />
+        ),
+      },
+      {
+        judul: "Kesimpulan Belajar Menggunakan AI",
+        slug: "kesimpulan-belajar-menggunakan-ai",
+        konten: (
+          <AIWebDevConclusion />
+        ),
+      }
+    ],
+  }
 };
 
 export default function BabPage({ params }: { params: { bab: string } }) {

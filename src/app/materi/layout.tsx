@@ -11,6 +11,7 @@ import {
   FiAward,
   FiBookmark,
   FiFileText,
+  FiMessageCircle,
 } from "react-icons/fi";
 import { BsCircleFill } from "react-icons/bs";
 import { usePathname } from "next/navigation";
@@ -89,6 +90,25 @@ export default function MateriLayout({
         { title: "Contoh Layout Responsive", slug: "contoh-layout-responsive" },
         { title: "Kesimpulan Materi Bootstrap", slug: "kesimpulan-materi-bootstrap" },
 
+      ],
+    },
+    {
+      id: 3,
+      slug: "belajar-menggunakan-ai",
+      title: "Belajar Menggunakan AI",
+      icon: <FiMessageCircle className="text-emerald-500" />,
+      subItems: [
+        { title: "Apa Itu AI (Artificial Intelligence)?", slug: "apa-itu-ai" },
+        { title: "Contoh Penggunaan AI", slug: "contoh-penggunaan-ai" },
+        { title: "AI Dalam Dunia IT", slug: "ai-dalam-dunia-it" },
+        { title: "AI Dalam Dunia Web Development", slug: "ai-dalam-dunia-web-development" },
+        { title: "Contoh AI Membantu Coding", slug: "contoh-ai-membantu-coding" },
+        { title: "AI = Ancaman atau Peluang?", slug: "ai-ancaman-atau-peluang" },
+        { title: "Dasar-Dasar Masih Tetap Penting", slug: "dasar-dasar-masih-tetap-penting" },
+        { title: "Kesimpulan Belajar Menggunakan AI", slug: "kesimpulan-belajar-menggunakan-ai" },
+
+
+        
       ],
     },
   ];
