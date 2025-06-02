@@ -102,7 +102,7 @@ export default function Home() {
       <section id="features" className="bg-gray-50 py-20">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
-            TEST
+            sectionn karep
           </h2>
           <p className="text-gray-600 text-center max-w-2xl mx-auto mb-16">
             Everything you need to create, launch, and grow your website
