@@ -18,14 +18,14 @@ export default function MateriIndex() {
       durasi: "2 Jam Pelajaran",
       level: "Dasar"
     },
-    // {
-    //   id: 3,
-    //   slug: "javascript",
-    //   judul: "JavaScript Modern",
-    //   deskripsi: "Menguasai konsep pemrograman frontend dengan ES6+",
-    //   durasi: "6 Jam Pelajaran",
-    //   level: "Menengah"
-    // },
+    {
+      id: 3,
+      slug: "portofolio",
+      judul: "Code Portofolio ",
+      deskripsi: "Menguasai konsep pemrograman website dengan pembuatan portofolio",
+      durasi: "2 Jam Pelajaran",
+      level: "Menengah"
+    },
   ];
 
   return (
