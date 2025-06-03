@@ -233,12 +233,12 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-12">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+          <div className="flex flex-wrap justify-between gap-x-6 gap-y-10 text-sm text-gray-300">
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <FaCode className="text-blue-400 text-2xl" />
-                <span className="text-xl font-bold text-white">WebCraft</span>
+                <span className="text-xl font-bold text-white">Modul Website</span>
               </div>
               <p className="mb-4">
                 The easiest way to build professional websites without coding.
@@ -260,9 +260,34 @@ export default function Home() {
             </div>
 
             <div>
-              <h3 className="text-white font-semibold mb-4">Product</h3>
+              <h3 className="text-white font-semibold mb-4">About Us</h3>
               <ul className="space-y-2">
-                {["Features", "Templates", "Pricing", "Integrations"].map(
+                {[
+                  "Our Team", 
+                  "Vision & Mission", 
+                  "Contact", 
+                  "FAQ"
+                ].map(
+                  (item) => (
+                    <li key={item}>
+                      <a href="#" className="hover:text-white transition">
+                        {item}
+                      </a>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-white font-semibold mb-4">Learning Topics</h3>
+              <ul className="space-y-2">
+                {[
+                  "Introduction to HTML", 
+                  "CSS Styling Techniques", 
+                  "Responsive Design with Bootstrap", 
+                  "Basics of Artificial Intelligence"
+                ].map(
                   (item) => (
                     <li key={item}>
                       <a href="#" className="hover:text-white transition">
@@ -277,22 +302,13 @@ export default function Home() {
             <div>
               <h3 className="text-white font-semibold mb-4">Resources</h3>
               <ul className="space-y-2">
-                {["Documentation", "Tutorials", "Blog", "Support"].map(
+                {[
+                  "Web Modules", 
+                  "Installation Guide", 
+                  "Student Community", 
+                  "Documentation"
+                ].map(
                   (item) => (
-                    <li key={item}>
-                      <a href="#" className="hover:text-white transition">
-                        {item}
-                      </a>
-                    </li>
-                  )
-                )}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-white font-semibold mb-4">Company</h3>
-              <ul className="space-y-2">
-                {["About", "Careers", "Contact", "Privacy"].map((item) => (
                   <li key={item}>
                     <a href="#" className="hover:text-white transition">
                       {item}
