@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
-import { FaRocket, FaCode, FaPalette, FaServer } from "react-icons/fa";
+import { FaRocket, FaCode, FaPalette, FaServer} from "react-icons/fa";
+import { BsBootstrapFill } from "react-icons/bs";
+import { AiFillOpenAI } from "react-icons/ai";
 import Navbar from "./component/Navbar";
 import { useEffect } from "react";
 import Link from "next/link";
@@ -102,36 +104,36 @@ export default function Home() {
       <section id="features" className="bg-gray-50 py-20">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
-            sectionn karep
+            Tools Behind the Web 
           </h2>
           <p className="text-gray-600 text-center max-w-2xl mx-auto mb-16">
-            Everything you need to create, launch, and grow your website
+            Discover the essential tools and technologies that power modern websites—from structure and style to interactivity and intelligence. These are the building blocks behind every great web experience
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                icon: <FaRocket className="text-blue-600 text-3xl" />,
-                title: "Lightning Fast",
+                icon: <FaCode className="text-blue-600 text-3xl"/>,
+                title: "HTML",
                 description:
-                  "Built with Next.js for blazing fast performance and SEO optimization.",
+                  "HTML (HyperText Markup Language) adalah bahasa markup standar untuk membuat dan menyusun halaman web.",
               },
               {
                 icon: <FaPalette className="text-blue-600 text-3xl" />,
-                title: "Beautiful Designs",
+                title: "CSS",
                 description:
-                  "Choose from dozens of professionally designed templates.",
+                  "CSS adalah cat, dekorasi, dan desain interior yang membuat bangunan tersebut terlihat menarik dan nyaman dilihat.",
               },
               {
-                icon: <FaCode className="text-blue-600 text-3xl" />,
-                title: "No-Code Builder",
+                icon: <BsBootstrapFill className="text-blue-600 text-3xl" />,
+                title: "Bootstrap",
                 description:
-                  "Drag-and-drop interface makes building easy for everyone.",
+                  "Bootstrap adalah framework CSS yang membantu kita membuat tampilan website yang menarik dan responsif dengan cepat.",
               },
               {
-                icon: <FaServer className="text-blue-600 text-3xl" />,
-                title: "Hosting Included",
-                description: "We handle hosting so you can focus on creating.",
+                icon: <AiFillOpenAI className="text-blue-600 text-3xl" />,
+                title: "AI (Artificial Intelligence)",
+                description: "AI atau kecerdasan buatan adalah teknologi yang memungkinkan komputer atau mesin untuk meniru kemampuan manusia dalam berpikir, belajar, dan mengambil keputusan.",
               },
             ].map((feature, index) => (
               <div
@@ -153,10 +155,10 @@ export default function Home() {
       <section id="templates" className="py-20">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
-            Stunning Templates
+            Group Members
           </h2>
           <p className="text-gray-600 text-center max-w-2xl mx-auto mb-16">
-            Get started quickly with our professionally designed templates
+            This project was created by our team to learn and apply the basic tools behind web development.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -175,14 +177,14 @@ export default function Home() {
                 </div>
                 <div className="p-6 bg-white">
                   <h3 className="text-xl font-semibold mb-2">
-                    Template {item}
+                    Member {item}
                   </h3>
                   <p className="text-gray-600 mb-4">
                     Perfect for businesses, portfolios, and blogs
                   </p>
-                  <button className="text-blue-600 font-medium hover:text-blue-700">
+                  {/* <button className="text-blue-600 font-medium hover:text-blue-700">
                     Preview Template →
-                  </button>
+                  </button> */}
                 </div>
               </div>
             ))}
