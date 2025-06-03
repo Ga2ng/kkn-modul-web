@@ -1,11 +1,12 @@
 "use client";
 import Image from "next/image";
-import { FaRocket, FaCode, FaPalette, FaServer} from "react-icons/fa";
+import { FaCode, FaPalette} from "react-icons/fa";
 import { BsBootstrapFill } from "react-icons/bs";
 import { AiFillOpenAI } from "react-icons/ai";
 import Navbar from "./component/Navbar";
 import { useEffect } from "react";
 import Link from "next/link";
+import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn, } from "react-icons/fa";
 
 export default function Home() {
   useEffect(() => {
@@ -50,7 +51,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="container mx-auto px-6 py-20 text-center">
+      <section id="home" className="container mx-auto px-6 py-20 text-center">
         <h1 className="text-4xl sm:text-5xl font-bold text-center mb-6">
           Modul Online KKN Sistem Informasi ITATS
           <br />
@@ -101,7 +102,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="bg-gray-50 py-20">
+      <section id="tools" className="bg-gray-50 py-20">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
             Tools Behind the Web 
@@ -151,8 +152,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Templates Section */}
-      <section id="templates" className="py-20">
+      {/* Group Members Section */}
+      <section id="group-members" className="py-20">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
             Group Members
@@ -162,41 +163,57 @@ export default function Home() {
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item) => (
-              <div
-                key={item}
-                className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition"
-              >
-                <div className="h-64 bg-gray-200 relative">
-                  <Image
-                    src={`/template-${item}.jpg`} // Replace with your actual images
-                    alt={`Template ${item}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6 bg-white">
-                  <h3 className="text-xl font-semibold mb-2">
-                    Member {item}
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    Perfect for businesses, portfolios, and blogs
-                  </p>
-                  {/* <button className="text-blue-600 font-medium hover:text-blue-700">
-                    Preview Template →
-                  </button> */}
-                </div>
+            {/* Member 1 */}
+            <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+              <div className="h-80 bg-gray-200 relative">
+                <Image
+                  src="/assets/qila.jpg" // Ganti dengan gambar anggota
+                  alt="Member 2"
+                  fill
+                  className="object-cover"
+                />
               </div>
-            ))}
-          </div>
+              <div className="p-6 bg-white">
+                <h3 className="text-xl font-semibold mb-2">Aqilla Yufsi Naffisa</h3>
+                <p className="text-gray-600 mb-4">Sekretaris Tim</p>
+              </div>
+            </div>
 
-          <div className="text-center mt-12">
-            <button className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition">
-              View All Templates
-            </button>
+            {/* Member 2 */}
+            <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+              <div className="h-80 bg-gray-200 relative">
+                <Image
+                  src="/assets/rifki.jpg" // Ganti dengan gambar anggota
+                  alt="Member 1"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6 bg-white">
+                <h3 className="text-xl font-semibold mb-2">Rifki Ardhana Syahputra</h3>
+                <p className="text-gray-600 mb-4">Ketua Tim</p>
+              </div>
+            </div>
+
+            {/* Member 3 */}
+            <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+              <div className="h-80 bg-gray-200 relative">
+                <Image
+                  src="/assets/gagang.jpg" // Ganti dengan gambar anggota
+                  alt="Member 3"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6 bg-white">
+                <h3 className="text-xl font-semibold mb-2">Ahmad Gagang Prakasa</h3>
+                <p className="text-gray-600 mb-4">Pemateri Tim</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
 
       {/* CTA Section */}
       <section className="bg-blue-600 text-white py-20">
@@ -227,17 +244,18 @@ export default function Home() {
                 The easiest way to build professional websites without coding.
               </p>
               <div className="flex space-x-4">
-                {["Twitter", "Facebook", "Instagram", "LinkedIn"].map(
-                  (social) => (
-                    <a
-                      key={social}
-                      href="#"
-                      className="hover:text-white transition"
-                    >
-                      {social}
-                    </a>
-                  )
-                )}
+                <a href="#" className="text-white hover:text-blue-400 text-xl transition">
+                  <FaTwitter />
+                </a>
+                <a href="#" className="text-white hover:text-blue-400 text-xl transition">
+                  <FaFacebookF />
+                </a>
+                <a href="#" className="text-white hover:text-pink-400 text-xl transition">
+                  <FaInstagram />
+                </a>
+                <a href="#" className="text-white hover:text-blue-600 text-xl transition">
+                  <FaLinkedinIn />
+                </a>
               </div>
             </div>
 
