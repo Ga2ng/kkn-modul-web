@@ -12,6 +12,7 @@ import {
   FiBookmark,
   FiFileText,
   FiMessageCircle,
+  FiTerminal,
 } from "react-icons/fi";
 import { BsCircleFill } from "react-icons/bs";
 import { usePathname } from "next/navigation";
@@ -106,11 +107,19 @@ export default function MateriLayout({
         { title: "AI = Ancaman atau Peluang?", slug: "ai-ancaman-atau-peluang" },
         { title: "Dasar-Dasar Masih Tetap Penting", slug: "dasar-dasar-masih-tetap-penting" },
         { title: "Kesimpulan Belajar Menggunakan AI", slug: "kesimpulan-belajar-menggunakan-ai" },
-
-
-        
       ],
     },
+    {
+      id: 4,
+      slug: "praktek",
+      title: "Ayo Praktek !!",
+      icon: <FiTerminal className="text-blue-500" />,
+      subItems: [
+        { title: "Praktek HTML", slug: "praktek-html" },
+        { title: "Praktek CSS", slug: "praktek-css" },
+        { title: "Praktek Bootstrap", slug: "praktek-bootstrap" },
+      ],
+    }
   ];
 
   return (
