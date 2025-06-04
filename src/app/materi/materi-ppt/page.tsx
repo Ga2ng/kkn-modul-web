@@ -11,7 +11,7 @@ export default function MateriPPT() {
     },
     {
       id: 2,
-      title: "Pengenalan Framework Bootstrap test",
+      title: "Pengenalan Framework Bootstrap",
       description: "Pengenalan framework CSS Bootstrap",
       fileUrl: "https://www.canva.com/design/DAGn8SME8ZU/2_qNLG-X13iSAPBnXtpH9w/edit?utm_content=DAGn8SME8ZU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
       size: "online"
