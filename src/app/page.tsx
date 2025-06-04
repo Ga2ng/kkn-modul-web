@@ -167,7 +167,7 @@ export default function Home() {
             <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
               <div className="h-80 bg-gray-200 relative">
                 <Image
-                  src="/assets/qila.jpg" // Ganti dengan gambar anggota
+                  src="/assets/qila.JPG" // Ganti dengan gambar anggota
                   alt="Member 2"
                   fill
                   className="object-cover"
@@ -199,7 +199,7 @@ export default function Home() {
             <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
               <div className="h-80 bg-gray-200 relative">
                 <Image
-                  src="/assets/gagang.jpg" // Ganti dengan gambar anggota
+                  src="/assets/gagang.JPG" // Ganti dengan gambar anggota
                   alt="Member 3"
                   fill
                   className="object-cover"
