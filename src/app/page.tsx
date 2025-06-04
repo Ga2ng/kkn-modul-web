@@ -1,9 +1,12 @@
 "use client";
 import Image from "next/image";
-import { FaRocket, FaCode, FaPalette, FaServer } from "react-icons/fa";
+import { FaCode, FaPalette} from "react-icons/fa";
+import { BsBootstrapFill } from "react-icons/bs";
+import { AiFillOpenAI } from "react-icons/ai";
 import Navbar from "./component/Navbar";
 import { useEffect } from "react";
 import Link from "next/link";
+import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn, } from "react-icons/fa";
 
 export default function Home() {
   useEffect(() => {
@@ -48,7 +51,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="container mx-auto px-6 py-20 text-center">
+      <section id="home" className="container mx-auto px-6 py-20 text-center">
         <h1 className="text-4xl sm:text-5xl font-bold text-center mb-6">
           Modul Online KKN Sistem Informasi ITATS
           <br />
@@ -99,39 +102,39 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="bg-gray-50 py-20">
+      <section id="tools" className="bg-gray-50 py-20">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
-            TEST
+            Tools Behind the Web 
           </h2>
           <p className="text-gray-600 text-center max-w-2xl mx-auto mb-16">
-            Everything you need to create, launch, and grow your website
+            Discover the essential tools and technologies that power modern websites—from structure and style to interactivity and intelligence. These are the building blocks behind every great web experience
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                icon: <FaRocket className="text-blue-600 text-3xl" />,
-                title: "Lightning Fast",
+                icon: <FaCode className="text-blue-600 text-3xl"/>,
+                title: "HTML",
                 description:
-                  "Built with Next.js for blazing fast performance and SEO optimization.",
+                  "HTML (HyperText Markup Language) adalah bahasa markup standar untuk membuat dan menyusun halaman web.",
               },
               {
                 icon: <FaPalette className="text-blue-600 text-3xl" />,
-                title: "Beautiful Designs",
+                title: "CSS",
                 description:
-                  "Choose from dozens of professionally designed templates.",
+                  "CSS adalah cat, dekorasi, dan desain interior yang membuat bangunan tersebut terlihat menarik dan nyaman dilihat.",
               },
               {
-                icon: <FaCode className="text-blue-600 text-3xl" />,
-                title: "No-Code Builder",
+                icon: <BsBootstrapFill className="text-blue-600 text-3xl" />,
+                title: "Bootstrap",
                 description:
-                  "Drag-and-drop interface makes building easy for everyone.",
+                  "Bootstrap adalah framework CSS yang membantu kita membuat tampilan website yang menarik dan responsif dengan cepat.",
               },
               {
-                icon: <FaServer className="text-blue-600 text-3xl" />,
-                title: "Hosting Included",
-                description: "We handle hosting so you can focus on creating.",
+                icon: <AiFillOpenAI className="text-blue-600 text-3xl" />,
+                title: "AI (Artificial Intelligence)",
+                description: "AI atau kecerdasan buatan adalah teknologi yang memungkinkan komputer atau mesin untuk meniru kemampuan manusia dalam berpikir, belajar, dan mengambil keputusan.",
               },
             ].map((feature, index) => (
               <div
@@ -149,52 +152,68 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Templates Section */}
-      <section id="templates" className="py-20">
+      {/* Group Members Section */}
+      <section id="group-members" className="py-20">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
-            Stunning Templates
+            Group Members
           </h2>
           <p className="text-gray-600 text-center max-w-2xl mx-auto mb-16">
-            Get started quickly with our professionally designed templates
+            This project was created by our team to learn and apply the basic tools behind web development.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item) => (
-              <div
-                key={item}
-                className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition"
-              >
-                <div className="h-64 bg-gray-200 relative">
-                  <Image
-                    src={`/template-${item}.jpg`} // Replace with your actual images
-                    alt={`Template ${item}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6 bg-white">
-                  <h3 className="text-xl font-semibold mb-2">
-                    Template {item}
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    Perfect for businesses, portfolios, and blogs
-                  </p>
-                  <button className="text-blue-600 font-medium hover:text-blue-700">
-                    Preview Template →
-                  </button>
-                </div>
+            {/* Member 1 */}
+            <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+              <div className="h-80 bg-gray-200 relative">
+                <Image
+                  src="/assets/qila.JPG" // Ganti dengan gambar anggota
+                  alt="Member 2"
+                  fill
+                  className="object-cover"
+                />
               </div>
-            ))}
-          </div>
+              <div className="p-6 bg-white">
+                <h3 className="text-xl font-semibold mb-2">Aqilla Yufsi Naffisa</h3>
+                <p className="text-gray-600 mb-4">Sekretaris Tim</p>
+              </div>
+            </div>
 
-          <div className="text-center mt-12">
-            <button className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition">
-              View All Templates
-            </button>
+            {/* Member 2 */}
+            <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+              <div className="h-80 bg-gray-200 relative">
+                <Image
+                  src="/assets/rifki.jpg" // Ganti dengan gambar anggota
+                  alt="Member 1"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6 bg-white">
+                <h3 className="text-xl font-semibold mb-2">Rifki Ardhana Syahputra</h3>
+                <p className="text-gray-600 mb-4">Ketua Tim</p>
+              </div>
+            </div>
+
+            {/* Member 3 */}
+            <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+              <div className="h-80 bg-gray-200 relative">
+                <Image
+                  src="/assets/gagang.JPG" // Ganti dengan gambar anggota
+                  alt="Member 3"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6 bg-white">
+                <h3 className="text-xl font-semibold mb-2">Ahmad Gagang Prakasa</h3>
+                <p className="text-gray-600 mb-4">Pemateri Tim</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
 
       {/* CTA Section */}
       <section className="bg-blue-600 text-white py-20">
@@ -214,35 +233,61 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-12">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+          <div className="flex flex-wrap justify-between gap-x-6 gap-y-10 text-sm text-gray-300">
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <FaCode className="text-blue-400 text-2xl" />
-                <span className="text-xl font-bold text-white">WebCraft</span>
+                <span className="text-xl font-bold text-white">Modul Website</span>
               </div>
               <p className="mb-4">
                 The easiest way to build professional websites without coding.
               </p>
               <div className="flex space-x-4">
-                {["Twitter", "Facebook", "Instagram", "LinkedIn"].map(
-                  (social) => (
-                    <a
-                      key={social}
-                      href="#"
-                      className="hover:text-white transition"
-                    >
-                      {social}
-                    </a>
-                  )
-                )}
+                <a href="#" className="text-white hover:text-blue-400 text-xl transition">
+                  <FaTwitter />
+                </a>
+                <a href="#" className="text-white hover:text-blue-400 text-xl transition">
+                  <FaFacebookF />
+                </a>
+                <a href="#" className="text-white hover:text-pink-400 text-xl transition">
+                  <FaInstagram />
+                </a>
+                <a href="#" className="text-white hover:text-blue-600 text-xl transition">
+                  <FaLinkedinIn />
+                </a>
               </div>
             </div>
 
             <div>
-              <h3 className="text-white font-semibold mb-4">Product</h3>
+              <h3 className="text-white font-semibold mb-4">About Us</h3>
               <ul className="space-y-2">
-                {["Features", "Templates", "Pricing", "Integrations"].map(
+                {[
+                  "Our Team", 
+                  "Vision & Mission", 
+                  "Contact", 
+                  "FAQ"
+                ].map(
+                  (item) => (
+                    <li key={item}>
+                      <a href="#" className="hover:text-white transition">
+                        {item}
+                      </a>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-white font-semibold mb-4">Learning Topics</h3>
+              <ul className="space-y-2">
+                {[
+                  "Introduction to HTML", 
+                  "CSS Styling Techniques", 
+                  "Responsive Design with Bootstrap", 
+                  "Basics of Artificial Intelligence"
+                ].map(
                   (item) => (
                     <li key={item}>
                       <a href="#" className="hover:text-white transition">
@@ -257,22 +302,13 @@ export default function Home() {
             <div>
               <h3 className="text-white font-semibold mb-4">Resources</h3>
               <ul className="space-y-2">
-                {["Documentation", "Tutorials", "Blog", "Support"].map(
+                {[
+                  "Web Modules", 
+                  "Installation Guide", 
+                  "Student Community", 
+                  "Documentation"
+                ].map(
                   (item) => (
-                    <li key={item}>
-                      <a href="#" className="hover:text-white transition">
-                        {item}
-                      </a>
-                    </li>
-                  )
-                )}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-white font-semibold mb-4">Company</h3>
-              <ul className="space-y-2">
-                {["About", "Careers", "Contact", "Privacy"].map((item) => (
                   <li key={item}>
                     <a href="#" className="hover:text-white transition">
                       {item}
