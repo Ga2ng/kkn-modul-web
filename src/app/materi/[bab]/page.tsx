@@ -18,6 +18,14 @@ import AIThreatOrOpportunity from "@/app/component/materi3/AIThreatOrOpportunity
 import AIWebDev from "@/app/component/materi3/AIWebDev";
 import AIWebDevConclusion from "@/app/component/materi3/AIWebDevConclusion";
 import FundamentalSection from "@/app/component/materi3/FundamentalSection";
+import AboutContent from "@/app/component/materi4/AboutContent";
+import ContactContent from "@/app/component/materi4/ContactContent";
+import EducationContent from "@/app/component/materi4/EducationContent";
+import HeroContent from "@/app/component/materi4/HeroContent";
+import PortofolioContent from "@/app/component/materi4/PortofolioContent";
+import PracticeContent from "@/app/component/materi4/PracticeContent";
+import ServicesContent from "@/app/component/materi4/ServicesContent";
+import SidebarContent from "@/app/component/materi4/SidebarContent";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { useEffect, useRef } from "react";
@@ -1544,7 +1552,69 @@ const kontenBab: Record<string, any> = {
         ),
       }
     ],
-  }
+  },
+  "praktek": {
+    judul: "Dokumentasi Website Portofolio",
+    subBab: [
+      {
+        judul: "Preview",
+        slug: "preview",
+        konten: (
+          <PracticeContent/>
+        ),
+      },
+      {
+        judul: "Implementasi Sidebar",
+        slug: "sidebar",
+        konten: (
+          <SidebarContent/>
+        ),
+      },
+      {
+        judul: "Implementasi Hero Section",
+        slug: "hero",
+        konten: (
+          <HeroContent/>
+        ),
+      },
+      {
+        judul: "Implementasi About Section",
+        slug: "about",
+        konten: (
+          <AboutContent/>
+        ),
+      },
+      {
+        judul: "Implementasi Education Section",
+        slug: "education",
+        konten: (
+          <EducationContent/>
+        ),
+      },
+      {
+        judul: "Implementasi Services Section",
+        slug: "services",
+        konten: (
+          <ServicesContent/>
+        ),
+      },
+      {
+        judul: "Implementasi Portofolio Section",
+        slug: "portofolio",
+        konten: (
+          <PortofolioContent/>
+        ),
+      },
+      {
+        judul: "Implementasi Contact Section",
+        slug: "contact",
+        konten: (
+          <ContactContent/>
+        ),
+      },
+    ],
+  },
+
 };
 
 export default function BabPage({ params }: { params: { bab: string } }) {

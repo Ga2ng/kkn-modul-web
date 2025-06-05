@@ -29,7 +29,7 @@ export default function MateriIndex() {
     {
       id: 4,
       slug: "praktek",
-      judul: "Ayo Praktek !!",
+      judul: "Implementasi Website Portofolio",
       deskripsi: "Latihan praktek untuk memperkuat pemahaman Anda tentang materi yang telah dipelajari",
       durasi: "2 Jam Pelajaran",
       level: "Pemula"

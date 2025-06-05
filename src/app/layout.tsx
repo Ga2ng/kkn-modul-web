@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import { Plus_Jakarta_Sans } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+
+const plusJakartaSans = Plus_Jakarta_Sans({subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "Web Modul KKN Sistem Informasi ITATS",
@@ -16,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html className="scroll-smooth light" lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={plusJakartaSans.className}>{children}</body>
     </html>
   );
 }

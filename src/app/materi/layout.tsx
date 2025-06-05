@@ -13,6 +13,8 @@ import {
   FiFileText,
   FiMessageCircle,
   FiTerminal,
+  FiTool,
+  FiBookOpen
 } from "react-icons/fi";
 import { BsCircleFill } from "react-icons/bs";
 import { usePathname } from "next/navigation";
@@ -112,12 +114,17 @@ export default function MateriLayout({
     {
       id: 4,
       slug: "praktek",
-      title: "Ayo Praktek !!",
-      icon: <FiTerminal className="text-blue-500" />,
+      title: "Implementasi Webiste Portofolio",
+      icon: <FiBookOpen className="text-blue-500" />,
       subItems: [
-        { title: "Praktek HTML", slug: "praktek-html" },
-        { title: "Praktek CSS", slug: "praktek-css" },
-        { title: "Praktek Bootstrap", slug: "praktek-bootstrap" },
+        { title: "Preview", slug: "preview" },
+        { title: "Section Sidebar", slug: "sidebar" },
+        { title: "Section Hero", slug: "hero" },
+        { title: "Section About", slug: "about" },
+        { title: "Section Education", slug: "education" },
+        { title: "Section Services", slug: "services" },
+        { title: "Section Portofolio", slug: "portofolio" },
+        { title: "Section Contact", slug: "contact" },
       ],
     }
   ];
@@ -263,12 +270,6 @@ export default function MateriLayout({
             </Link>
             <Link href="/materi" className="text-blue-600 font-medium">
               Materi
-            </Link>
-            <Link
-              href="/tentang"
-              className="text-gray-600 hover:text-blue-600 transition"
-            >
-              Tentang
             </Link>
           </nav>
         </div>
