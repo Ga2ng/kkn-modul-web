@@ -60,7 +60,7 @@ export default function SidebarContent() {
             max-width: 1400px;
             margin: 0 auto;
         }
-            
+
         /* Sembunyikan scrollbar default */
         .sidebar::-webkit-scrollbar,
         .main-content::-webkit-scrollbar {
@@ -214,6 +214,7 @@ export default function SidebarContent() {
             </button>
         </div>
   </div>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></
   </body>
 </html>`;
 
