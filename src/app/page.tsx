@@ -103,7 +103,7 @@ export default function Home() {
 
       {/* Features Section */}
       <section id="tools" className="bg-gray-50 py-20">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 mb-6">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
             Tools Behind the Web 
           </h2>
