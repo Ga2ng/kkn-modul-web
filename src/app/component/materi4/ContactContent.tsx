@@ -361,7 +361,7 @@ export default function ContactContent() {
 
       <div className="space-y-6">
         {renderCodeBlock('index.html', htmlCode, 'html', copiedHtml, () => copyToClipboard(htmlCode, setCopiedHtml))}
-        {renderCodeBlock('style-services.css', cssCode, 'css', copiedCss, () => copyToClipboard(cssCode, setCopiedCss))}
+        {renderCodeBlock('style-contact.css', cssCode, 'css', copiedCss, () => copyToClipboard(cssCode, setCopiedCss))}
       </div>
     </div>
   );
