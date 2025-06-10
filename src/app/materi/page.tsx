@@ -23,7 +23,7 @@ export default function MateriIndex() {
       slug: "belajar-menggunakan-ai",
       judul: "Belajar Menggunakan AI",
       deskripsi: "Mengenal AI dan bagaimana AI dapat membantu dalam pengembangan web",
-      durasi: "3 Jam Pelajaran",
+      durasi: "2 Jam Pelajaran",
       level: "Menengah"
     },
     {
@@ -32,7 +32,7 @@ export default function MateriIndex() {
       judul: "Implementasi Website Portofolio",
       deskripsi: "Latihan praktek untuk memperkuat pemahaman Anda tentang materi yang telah dipelajari",
       durasi: "2 Jam Pelajaran",
-      level: "Pemula"
+      level: "Profesional"
     },
   ];
 

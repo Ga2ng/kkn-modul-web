@@ -60,7 +60,7 @@ export default function SidebarContent() {
             max-width: 1400px;
             margin: 0 auto;
         }
-            
+
         /* Sembunyikan scrollbar default */
         .sidebar::-webkit-scrollbar,
         .main-content::-webkit-scrollbar {
