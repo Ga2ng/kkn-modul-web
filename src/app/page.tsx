@@ -162,7 +162,7 @@ export default function Home() {
             This project was created by our team to learn and apply the basic tools behind web development.
           </p>
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {/* Member 1 */}
             <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
               <div className="h-80 bg-gray-200 relative">
@@ -221,8 +221,38 @@ export default function Home() {
                 />
               </div>
               <div className="p-6 bg-white">
-                <h3 className="text-xl font-semibold mb-2">Adrian Frizna</h3>
+                <h3 className="text-xl font-semibold mb-2">Adrian Frizna Affandi</h3>
                 <p className="text-gray-600 mb-4">Pemateri Tim</p>
+              </div>
+            </div>
+            {/* Member 5 */}
+            <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+              <div className="h-80 bg-gray-200 relative">
+                <Image
+                  src="/assets/Yogi.JPG" // Ganti dengan gambar anggota
+                  alt="Member 3"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6 bg-white">
+                <h3 className="text-xl font-semibold mb-2">I Kadek Purna Yogisswara</h3>
+                <p className="text-gray-600 mb-4">Asisten 1</p>
+              </div>
+            </div>
+            {/* Member 6 */}
+            <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+              <div className="h-80 bg-gray-200 relative">
+                <Image
+                  src="/assets/Fadhil.JPG" // Ganti dengan gambar anggota
+                  alt="Member 3"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6 bg-white">
+                <h3 className="text-xl font-semibold mb-2">Muhammad Fadhil Putra S</h3>
+                <p className="text-gray-600 mb-4">Assisten 2</p>
               </div>
             </div>
           </div>
