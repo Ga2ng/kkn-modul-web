@@ -51,7 +51,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section id="home" className="container mx-auto px-6 py-20 text-center">
+      <section id="home" className="mt-10 container mx-auto px-6 py-20 text-center">
         <h1 className="text-4xl sm:text-5xl font-bold text-center mb-6">
           Modul Online KKN Sistem Informasi ITATS
           <br />
